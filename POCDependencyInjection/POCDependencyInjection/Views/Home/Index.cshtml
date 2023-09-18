@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+@* ViewBag.Singleton = _singleton.Guid.ToString();
+            ViewBag.Transient = _transient.Guid.ToString();
+            ViewBag.Scoped = _scoped.Guid.ToString();*@
+
+<div>
+    <p>
+        Singleton: @ViewBag.Singleton
+    </p>
+    <p>
+        Transient: @ViewBag.Transient
+    </p>
+    <p>
+        Scoped: @ViewBag.Scoped
+    </p>
+</div>
+
+<div>
+    <p>
+        Service Singleton: @ViewBag.ServiceSingleton
+    </p>
+    <p>
+       Service Transient: @ViewBag.ServiceTransient
+    </p>
+    <p>
+       Service  Scoped: @ViewBag.ServiceScoped
+    </p>
+</div>

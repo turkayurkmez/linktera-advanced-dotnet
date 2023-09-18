@@ -1,10 +1,14 @@
-using overviewAspNetCore.Services;
+using POCDependencyInjection.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddTransient<IEmployeeService, SmurfEmployeeService>();
+
+builder.Services.AddSingleton<ISingleton, Singleton>();
+builder.Services.AddTransient<ITransient, Transient>();
+builder.Services.AddScoped<IScoped, Scoped>();
+builder.Services.AddTransient<ServiceHelper>();
 
 var app = builder.Build();
 
@@ -15,8 +19,6 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
-//app.UseWelcomePage();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
