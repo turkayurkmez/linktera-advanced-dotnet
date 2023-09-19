@@ -29,5 +29,12 @@ namespace creatingMiddlewares.Controllers
             })
             .ToArray();
         }
+        [HttpPost]
+        public IActionResult Post(ProductComment productComment)
+        {
+            return Ok();
+        }
     }
+
+
 }
