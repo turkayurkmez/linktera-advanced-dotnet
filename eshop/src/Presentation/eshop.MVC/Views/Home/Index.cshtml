@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<eshop.DataTransferObjects.Responses.ProductCardResponse>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +7,9 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.Name @item.Price</li>
+    }
+</ul>

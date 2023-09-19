@@ -1,7 +1,14 @@
+using eshop.Application;
+using eshop.Application.Mappings;
+using eshop.Data.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddAutoMapper(typeof(MapProfile));
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IProductRepositoryAsync, FakeProductRepository>();
 
 var app = builder.Build();
 
