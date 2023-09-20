@@ -1,4 +1,5 @@
 using eshop.Application;
+using eshop.Application.Handlers;
 using eshop.Application.Mappings;
 using eshop.Data.Repositories;
 
@@ -9,6 +10,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(typeof(MapProfile));
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductRepositoryAsync, FakeProductRepository>();
+//builder.Services.AddScoped<GetAllProductRequestHandler>();
+builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(GetAllProductRequestHandler).Assembly));
 
 var app = builder.Build();
 
@@ -32,3 +35,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+

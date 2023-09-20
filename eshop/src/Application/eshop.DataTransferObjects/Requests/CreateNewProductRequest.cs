@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MediatR;
+using System.ComponentModel.DataAnnotations;
 
 namespace eshop.DataTransferObjects.Requests
 {
-    public class CreateNewProductRequest
+    public class CreateNewProductRequest : IRequest<int>
     {
         [Required(ErrorMessage = "Ürün adı boş olmamalı")]
         [MinLength(3, ErrorMessage = "En az 3 karakter giriniz...")]

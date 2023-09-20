@@ -15,9 +15,9 @@ namespace eshop.Data.Repositories
 
             };
         }
-        public Task CreateAsync(Product entity)
+        public async Task CreateAsync(Product entity)
         {
-            throw new NotImplementedException();
+            await Task.CompletedTask;
         }
 
         public Task DeleteAsync(int id)
