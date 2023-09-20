@@ -21,7 +21,7 @@ namespace eshop.Application.Handlers
         {
             var product = _mapper.Map<Product>(request);
             await _productRepository.CreateAsync(product);
-            return 1;
+            return product.Id;
         }
     }
 }

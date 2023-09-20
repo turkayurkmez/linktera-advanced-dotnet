@@ -1,7 +1,9 @@
 using eshop.Application;
 using eshop.Application.Handlers;
 using eshop.Application.Mappings;
+using eshop.Data.Context;
 using eshop.Data.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,9 +11,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(typeof(MapProfile));
 builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<IProductRepositoryAsync, FakeProductRepository>();
+builder.Services.AddScoped<IProductRepositoryAsync, EFProductRepository>();
+builder.Services.AddScoped<ICategoryRepository, EFCategoryRepository>();
 //builder.Services.AddScoped<GetAllProductRequestHandler>();
 builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(GetAllProductRequestHandler).Assembly));
+
+var connectionString = builder.Configuration.GetConnectionString("db");
+
+builder.Services.AddDbContext<EshopDbContext>(options => options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 

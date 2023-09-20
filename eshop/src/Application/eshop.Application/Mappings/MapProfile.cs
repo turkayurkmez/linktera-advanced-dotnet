@@ -11,6 +11,7 @@ namespace eshop.Application.Mappings
         {
             CreateMap<Product, ProductCardResponse>();
             CreateMap<CreateNewProductRequest, Product>();
+            CreateMap<Category, CategoryMenuResponse>();
         }
     }
 }
