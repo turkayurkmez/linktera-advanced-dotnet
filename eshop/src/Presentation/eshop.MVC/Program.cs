@@ -1,4 +1,3 @@
-using eshop.Application;
 using eshop.Application.Handlers;
 using eshop.Application.Mappings;
 using eshop.Data.Context;
@@ -10,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(typeof(MapProfile));
-builder.Services.AddScoped<IProductService, ProductService>();
+//builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductRepositoryAsync, EFProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, EFCategoryRepository>();
 //builder.Services.AddScoped<GetAllProductRequestHandler>();

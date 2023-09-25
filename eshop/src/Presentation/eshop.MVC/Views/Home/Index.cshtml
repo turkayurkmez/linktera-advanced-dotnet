@@ -1,4 +1,5 @@
-﻿@model IEnumerable<eshop.DataTransferObjects.Responses.ProductCardResponse>
+﻿@addTagHelper eshop.MVC.TagHelpers.*, eshop.MVC
+@model ProductsViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -8,8 +9,10 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 <ul>
-    @foreach (var item in Model)
+    @foreach (var item in Model.Products)
     {
         <li>@item.Name @item.Price</li>
     }
 </ul>
+
+<div page-model="@Model.PageModel" page-action="Index"></div>

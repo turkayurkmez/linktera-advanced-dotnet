@@ -9,7 +9,10 @@ namespace eshop.Application.Mappings
     {
         public MapProfile()
         {
-            CreateMap<Product, ProductCardResponse>();
+            CreateMap<Product, ProductCardResponse>().ForMember(
+                p => p.CategoryName,
+                s => s.MapFrom(x => x.Category.Name)
+                );
             CreateMap<CreateNewProductRequest, Product>();
             CreateMap<Category, CategoryMenuResponse>();
         }

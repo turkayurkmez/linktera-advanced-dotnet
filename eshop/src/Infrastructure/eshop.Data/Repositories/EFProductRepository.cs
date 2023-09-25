@@ -30,7 +30,7 @@ namespace eshop.Data.Repositories
 
         public async Task<IList<Product>> GetAllAsync()
         {
-            return await _dbContext.Products.ToListAsync();
+            return await _dbContext.Products.Include(p => p.Category).ToListAsync();
         }
 
         public async Task<Product> GetByIdAsync(int id)

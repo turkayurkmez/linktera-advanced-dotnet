@@ -13,15 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{B50B2B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{983D82C1-D3BD-408E-A198-4B2E80DA9872}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eshop.Entities", "src\Domain\eshop.Entities\eshop.Entities.csproj", "{09A88CEB-7BC3-4DDC-B742-15DDB31834C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eshop.Entities", "src\Domain\eshop.Entities\eshop.Entities.csproj", "{09A88CEB-7BC3-4DDC-B742-15DDB31834C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eshop.Data", "src\Infrastructure\eshop.Data\eshop.Data.csproj", "{13F17648-4E0C-4021-A7E1-A74E2C24F946}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eshop.Data", "src\Infrastructure\eshop.Data\eshop.Data.csproj", "{13F17648-4E0C-4021-A7E1-A74E2C24F946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eshop.Application", "src\Application\eshop.Application\eshop.Application.csproj", "{0C073C61-C76D-44F5-B306-BB1B54C45168}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eshop.Application", "src\Application\eshop.Application\eshop.Application.csproj", "{0C073C61-C76D-44F5-B306-BB1B54C45168}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eshop.MVC", "src\Presentation\eshop.MVC\eshop.MVC.csproj", "{DE37FF59-6DA4-488B-AC5D-424A8AB90E74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eshop.MVC", "src\Presentation\eshop.MVC\eshop.MVC.csproj", "{DE37FF59-6DA4-488B-AC5D-424A8AB90E74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eshop.DataTransferObjects", "src\Application\eshop.DataTransferObjects\eshop.DataTransferObjects.csproj", "{AFC83411-7AA7-4818-BFB7-29EE9760E5C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eshop.DataTransferObjects", "src\Application\eshop.DataTransferObjects\eshop.DataTransferObjects.csproj", "{AFC83411-7AA7-4818-BFB7-29EE9760E5C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eshop.API", "src\Presentation\eshop.API\eshop.API.csproj", "{9066E17E-1493-4255-9CA2-AB1CC21E55A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{AFC83411-7AA7-4818-BFB7-29EE9760E5C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFC83411-7AA7-4818-BFB7-29EE9760E5C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFC83411-7AA7-4818-BFB7-29EE9760E5C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9066E17E-1493-4255-9CA2-AB1CC21E55A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9066E17E-1493-4255-9CA2-AB1CC21E55A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9066E17E-1493-4255-9CA2-AB1CC21E55A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9066E17E-1493-4255-9CA2-AB1CC21E55A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{0C073C61-C76D-44F5-B306-BB1B54C45168} = {15EA6AC7-47E0-4E10-8654-2CABE39C0327}
 		{DE37FF59-6DA4-488B-AC5D-424A8AB90E74} = {983D82C1-D3BD-408E-A198-4B2E80DA9872}
 		{AFC83411-7AA7-4818-BFB7-29EE9760E5C4} = {15EA6AC7-47E0-4E10-8654-2CABE39C0327}
+		{9066E17E-1493-4255-9CA2-AB1CC21E55A7} = {983D82C1-D3BD-408E-A198-4B2E80DA9872}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {44422831-D1A3-4D64-A517-D6B1971388F6}
