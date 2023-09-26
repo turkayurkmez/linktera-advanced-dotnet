@@ -2,6 +2,7 @@ using eshop.Application.Handlers;
 using eshop.Application.Mappings;
 using eshop.Data.Context;
 using eshop.Data.Repositories;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +20,16 @@ var connectionString = builder.Configuration.GetConnectionString("db");
 
 builder.Services.AddDbContext<EshopDbContext>(options => options.UseSqlServer(connectionString));
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(option =>
+                {
+                    option.LoginPath = "/Users/Login";
+
+                    option.ReturnUrlParameter = "gidilecekSayfa";
+                });
+
+builder.Services.AddSession();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,6 +45,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

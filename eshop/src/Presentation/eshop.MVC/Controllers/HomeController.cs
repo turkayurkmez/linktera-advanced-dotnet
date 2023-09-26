@@ -2,6 +2,7 @@
 using eshop.DataTransferObjects.Responses;
 using eshop.MVC.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -72,8 +73,10 @@ namespace eshop.MVC.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
+
             return View();
         }
         [HttpPost]

@@ -1,5 +1,6 @@
 ﻿using eshop.DataTransferObjects.Requests;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eshop.API.Controllers
@@ -42,8 +43,10 @@ namespace eshop.API.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Authorize]
         public async Task<IActionResult> AddProduct(CreateNewProductRequest request)
         {
+
             if (ModelState.IsValid)
             {
                 var lastId = await _mediator.Send(request);
@@ -51,6 +54,11 @@ namespace eshop.API.Controllers
 
             }
             return BadRequest(ModelState);
+        }
+        [HttpGet("[action]")]
+        public IActionResult GetUserInfo()
+        {
+            return Ok(User);
         }
     }
 }

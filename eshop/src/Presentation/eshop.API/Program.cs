@@ -1,4 +1,6 @@
 ﻿using eshop.API.Extensions;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,24 @@ builder.Services.AddControllers()
 
                     };
                 });
+
+builder.Services.AddAuthentication("Bearer")
+                .AddJwtBearer(option =>
+                {
+                    option.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+
+                        ValidIssuer = "server.linktera",
+                        ValidAudience = "client.linktera",
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("bu-ifade-tokeni-kanitlar"))
+
+                    };
+                });
+
+
+//builder.Services.AddAuthentication()
 
 
 
@@ -46,7 +66,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
